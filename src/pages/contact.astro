@@ -1,0 +1,48 @@
+---
+import CopyToClipbooard from "../components/CopyToClipbooard";
+import { email, socials } from "../config";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Gianmarco Cavallo - Contact"
+  description={`Let's start working together! Reach out via email: ${email}`}
+>
+  <main
+    class="relative flex flex-col text-left py-4 px-5 md:px-20 min-h-screen w-full"
+  >
+    <div class="max-w-2xl z-40">
+      <header
+        class="header-container h-fit flex items-center mt-20 lg:mt-56 mb-10"
+      >
+        <h1 class="text-white text-5xl font-bold">
+          Let's start working together!
+        </h1>
+      </header>
+      <address class="flex flex-col mb-4">
+        <h6 class="text-neutral-500 whitespace-nowrap mb-1">Contact Details</h6>
+
+        <h4
+          class="text-neutral-100 max-w-2xl w-full font-medium flex items-center gap-2"
+        >
+          {email}
+          <CopyToClipbooard client:load />
+        </h4>
+      </address>
+      <div class="flex flex-col">
+        <h6 class="text-neutral-500 whitespace-nowrap mb-1">Socials</h6>
+        <ul class="text-neutral-100 font-medium">
+          {
+            socials.map((social) => (
+              <li>
+                <a href={social.url} target="_blank">
+                  {social.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </main>
+</Layout>
