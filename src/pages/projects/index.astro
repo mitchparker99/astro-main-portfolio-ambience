@@ -1,0 +1,24 @@
+---
+import Projectlist from "../../components/Projectlist";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title="Projects"
+  description="I am a software developer with over two years of front-end development experience. I have worked on both enterprise and open-source software development projects. I am based in Melbourne and am currently working as a freelancer."
+>
+  <main
+    class="relative flex flex-col text-left py-4 px-5 md:px-20 min-h-screen max-w-6xl"
+  >
+    <div class="max-w-4xl z-40">
+      <header class="header-container flex items-center mt-20 lg:mt-56">
+        <h1 class="text-white text-5xl font-bold whitespace-nowrap">
+          Work Experience
+        </h1>
+      </header>
+      <div class="flex flex-col gap-4 mt-6 mb-12 lg:mb-6 h-full w-full">
+        <Workslist client:load />
+      </div>
+    </div>
+  </main>
+</Layout>
