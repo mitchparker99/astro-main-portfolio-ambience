@@ -11,7 +11,7 @@ const { title, description } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="bg-dark-500 selection:bg-red-500">
   <head>
     <meta charset="UTF-8" />
@@ -24,10 +24,7 @@ const currentPath = Astro.url.pathname;
       import "../utils/smoothNav.ts";
     </script>
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link
-      rel="stylesheet"
-      href="/Users/mitchellparker/Documents/AAA Studies/websites/astro-main-portfolio-ambience/public/gradient.css"
-    />
+    <link rel="stylesheet" href="/public/gradient.css" />
   </head>
   <body>
     <div class="gradient"></div>
@@ -35,9 +32,7 @@ const currentPath = Astro.url.pathname;
     <div class="z-40 relative 2xl:max-w-7xl mx-auto">
       <slot />
     </div>
-    <script
-      src="/Users/mitchellparker/Documents/AAA Studies/Astro-portfolio/public/gradient.js"
-    ></script>
+    <script src="/public/gradient.js"></script>
   </body>
 
   <style is:global>
