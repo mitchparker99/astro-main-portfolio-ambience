@@ -53,12 +53,13 @@ const ogImageUrl = new URL("/images/headshot.jpg", site).href;
     <link rel="stylesheet" href="/gradient.css" />
   </head>
   <body>
-    <div class="gradient"></div>
+    <div class="gradient-backdrop" aria-hidden="true">
+      <div class="gradient"></div>
+    </div>
     <Navbar client:load currentPath={currentPath} />
     <div class="z-40 relative 2xl:max-w-7xl mx-auto">
       <slot />
     </div>
-    <script src="/gradient.js" is:inline></script>
   </body>
 
   <style is:global>

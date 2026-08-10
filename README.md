@@ -27,8 +27,6 @@ site URL, nav routes and the about-me copy. Editing that one file updates every 
 │   ├── images/
 │   ├── favicon.ico
 │   ├── gradient.css
-│   ├── gradient.js
-│   ├── logo.svg
 │   └── robots.txt
 ├── src/
 │   ├── components/

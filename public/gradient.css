@@ -8,10 +8,25 @@
     }
 }
 
+/*
+ * Full-viewport backdrop that carries the animated blob.
+ * Fixed + pointer-events:none so the page content flows normally on top of it.
+ */
+.gradient-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+}
+
 .gradient {
     --size: 250px;
     --speed: 50s;
     --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    flex: 0 0 auto;
     width: var(--size);
     height: var(--size);
     filter: blur(calc(var(--size) / 5));
@@ -28,12 +43,7 @@
 
 body {
     background-color: #222;
-    position: absolute;
-    inset: 0;
-    display: flex;
-    place-content: center;
-    align-items: center;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 /* This is just to transition when you change the viewport size. */
