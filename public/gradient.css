@@ -11,6 +11,8 @@
 /*
  * Full-viewport backdrop that carries the animated blob.
  * Fixed + pointer-events:none so the page content flows normally on top of it.
+ * Anchored to the far side of the viewport: every page lays its copy out from
+ * the left margin, so this keeps the blob beside the text rather than under it.
  */
 .gradient-backdrop {
     position: fixed;
@@ -18,6 +20,7 @@
     z-index: 0;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     overflow: hidden;
     pointer-events: none;
 }
