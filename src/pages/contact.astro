@@ -1,12 +1,12 @@
 ---
 import CopyToClipbooard from "../components/CopyToClipboard";
-import { email, socials } from "../config";
+import { availability, email, location, socials } from "../config";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Gianmarco Cavallo - Contact"
-  description={`Let's start working together! Reach out via email: ${email}`}
+  title="Mitchell Parker — Contact"
+  description={`Get in touch with Mitchell Parker, Technology Executive (AI & Data Architecture). Email: ${email}`}
 >
   <main
     class="relative flex flex-col text-left py-4 px-5 md:px-20 min-h-screen w-full"
@@ -19,8 +19,8 @@ import Layout from "../layouts/Layout.astro";
           Let's start working together!
         </h1>
       </header>
-      <address class="flex flex-col mb-4">
-        <h6 class="text-neutral-500 whitespace-nowrap mb-1">Contact Details</h6>
+      <address class="flex flex-col mb-8 not-italic">
+        <h6 class="text-neutral-500 whitespace-nowrap mb-1">Email</h6>
 
         <h4
           class="text-neutral-100 max-w-2xl w-full font-medium flex items-center gap-2"
@@ -29,13 +29,18 @@ import Layout from "../layouts/Layout.astro";
           <CopyToClipbooard client:load />
         </h4>
       </address>
-      <div class="flex flex-col">
+      <div class="flex flex-col mb-8">
+        <h6 class="text-neutral-500 whitespace-nowrap mb-1">Based in</h6>
+        <h4 class="text-neutral-100 font-medium">{location}</h4>
+        <p class="text-neutral-400 text-sm mt-1">{availability}</p>
+      </div>
+      <div class="flex flex-col mb-24">
         <h6 class="text-neutral-500 whitespace-nowrap mb-1">Socials</h6>
         <ul class="text-neutral-100 font-medium">
           {
             socials.map((social) => (
               <li>
-                <a href={social.url} target="_blank">
+                <a href={social.url} target="_blank" rel="noopener noreferrer">
                   {social.title}
                 </a>
               </li>

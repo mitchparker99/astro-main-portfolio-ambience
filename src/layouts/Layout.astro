@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar";
+import { owner, websiteUrl } from "../config";
 import "@fontsource/montserrat";
 
 export interface Props {
@@ -9,6 +10,10 @@ export interface Props {
 
 const { title, description } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+const site = Astro.site ?? new URL(websiteUrl);
+const canonicalUrl = new URL(currentPath, site).href;
+const ogImageUrl = new URL("/images/headshot.jpg", site).href;
 ---
 
 <!DOCTYPE html>
@@ -16,10 +21,31 @@ const currentPath = Astro.url.pathname;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="author" content={owner} />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={owner} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={`Portrait of ${owner}`} />
+    <meta property="og:locale" content="en" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@mitchparker99" />
+    <meta name="twitter:creator" content="@mitchparker99" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <meta name="twitter:image:alt" content={`Portrait of ${owner}`} />
+
     <script>
       import "../utils/smoothNav.ts";
     </script>

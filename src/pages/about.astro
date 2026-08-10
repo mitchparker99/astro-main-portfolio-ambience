@@ -1,11 +1,11 @@
 ---
-import { aboutmeDescription } from "../config";
+import { aboutmeDescription, availability, jobTitle, location } from "../config";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Gianmarco Cavallo - About"
-  description="I am a software developer with over two years of front-end development experience. I have worked on both enterprise and open-source software development projects. I am based in Italy and am currently working as a freelancer."
+  title="Mitchell Parker — About"
+  description="Technology Executive working across AI adoption, data architecture and cloud. Co-Founder & COO of DiceWill, Data Architect at Mine Market, Founder of SAH Studios."
 >
   <main
     class="relative flex flex-col text-left py-4 px-5 md:px-20 min-h-screen w-full"
@@ -18,10 +18,82 @@ import Layout from "../layouts/Layout.astro";
           About me
         </h1>
       </header>
+      <h6 class="text-neutral-500 mt-2">
+        {jobTitle} · {location} · {availability}
+      </h6>
       <div class="overflow-hidden">
         <p class="text-neutral-400 mt-6 max-w-2xl">
           {aboutmeDescription}
         </p>
+      </div>
+
+      <div class="overflow-hidden mt-10">
+        <h2 class="text-white text-2xl font-bold">What I own</h2>
+        <ul class="text-neutral-400 mt-4 max-w-2xl list-disc list-inside">
+          <li>
+            <span class="text-neutral-100">Technology strategy</span> — target
+            architecture, roadmap sequencing, build-vs-buy, investment cases,
+            executive and investor reporting.
+          </li>
+          <li>
+            <span class="text-neutral-100">AI adoption & governance</span> —
+            agentic workflows, LLM product features, RAG, evaluation and
+            guardrails, model risk, AI policy, cost control.
+          </li>
+          <li>
+            <span class="text-neutral-100">Data & platform architecture</span> —
+            warehouse modelling, ingestion pipelines, BI layers, data quality
+            and governance by design.
+          </li>
+          <li>
+            <span class="text-neutral-100">Cloud, security & risk</span> — AWS,
+            Azure and GCP, IAM, resilience and DR, privacy frameworks (DPDPA,
+            GDPR principles), cyber posture.
+          </li>
+          <li>
+            <span class="text-neutral-100">Enterprise systems</span> — ERP, POS
+            and CRM integration, API contracts, legacy migration sequencing,
+            vendor selection.
+          </li>
+          <li>
+            <span class="text-neutral-100">Delivery & people</span> —
+            cross-functional and offshore delivery, SOPs and operating cadence,
+            vendor management, hiring.
+          </li>
+        </ul>
+      </div>
+
+      <div class="overflow-hidden mt-10">
+        <h2 class="text-white text-2xl font-bold">Education</h2>
+        <ul class="text-neutral-400 mt-4 max-w-2xl list-disc list-inside">
+          <li>
+            <span class="text-neutral-100"
+              >M. Information Technology — Data Science + Software
+              Development</span
+            >, Charles Sturt University, 2023–2025. GPA 6.17 · Executive Dean's
+            Award.
+          </li>
+          <li>
+            <span class="text-neutral-100"
+              >Grad. Cert. Applied Data Science</span
+            >, Charles Sturt University, 2023–2024. GPA 6.00.
+          </li>
+          <li>
+            <span class="text-neutral-100">B. Audio Engineering</span>, SAE
+            Institute Australia, 2020–2022.
+          </li>
+        </ul>
+      </div>
+
+      <div class="overflow-hidden mt-10 mb-24">
+        <h2 class="text-white text-2xl font-bold">Certifications</h2>
+        <ul class="text-neutral-400 mt-4 max-w-2xl list-disc list-inside">
+          <li>AWS Certified Solutions Architect — 2024</li>
+          <li>Google Data Analytics Professional — 2024</li>
+          <li>Microsoft Data Analyst Associate (Power BI) — 2023</li>
+          <li>Career Essentials in Cybersecurity — Microsoft & LinkedIn — 2023</li>
+          <li>Programming with Python — OpenEDG — 2022</li>
+        </ul>
       </div>
     </div>
   </main>

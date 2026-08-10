@@ -1,16 +1,9 @@
-import { For, Match, Switch } from "solid-js";
-import { formatDate, getYear } from "../utils/helpers";
+import { For } from "solid-js";
+import { formatPeriod } from "../utils/helpers";
 import { works, type Work } from "../config";
 
 type Props = {
   work: Work;
-};
-
-const ShowDate = (date: string, onlyYear?: boolean) => {
-  if (onlyYear) {
-    return getYear(date);
-  }
-  return formatDate(date);
 };
 
 const WorkPreviewCard = (props: Props) => {
@@ -26,23 +19,13 @@ const WorkPreviewCard = (props: Props) => {
               {props.work.title}
             </h2>
             <div class="flex gap-2 items-center text-neutral-500">
-              <time class="font-light text-sm m-0 flex items-center">
-                {ShowDate(props.work.startDate, props.work.onlyYear)}
+              <time class="font-light text-sm m-0 flex items-center whitespace-nowrap">
+                {formatPeriod(
+                  props.work.startDate,
+                  props.work.endDate,
+                  props.work.onlyYear
+                )}
               </time>
-              -
-              <Switch>
-                <Match when={props.work.endDate}>
-                  <time class="font-light text-sm m-0 flex items-center">
-                    {ShowDate(
-                      props.work.endDate as string,
-                      props.work.onlyYear
-                    )}
-                  </time>
-                </Match>
-                <Match when={!props.work.endDate}>
-                  <time>Present</time>
-                </Match>
-              </Switch>
             </div>
           </div>
           <div>

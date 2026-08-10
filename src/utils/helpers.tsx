@@ -31,6 +31,29 @@ export const getYear = (dateString: string) => {
   return year;
 }
 
+/**
+ * Renders a date range. Collapses "2023 - 2023" to a single "2023" and falls
+ * back to "Present" when there is no end date.
+ */
+export const formatPeriod = (
+  startDate: string,
+  endDate?: string,
+  onlyYear?: boolean
+) => {
+  const show = (date: string) =>
+    onlyYear ? String(getYear(date)) : formatDate(date);
+
+  const start = show(startDate);
+
+  if (!endDate) {
+    return `${start} — Present`;
+  }
+
+  const end = show(endDate);
+
+  return start === end ? start : `${start} — ${end}`;
+};
+
 export const isCurrentPath = (currentUrlPath: string, slug: string) => {
   return currentUrlPath === slug || currentUrlPath.startsWith(slug + "/");
 };

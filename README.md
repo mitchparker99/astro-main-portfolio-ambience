@@ -1,20 +1,22 @@
-Simple portfolio made in `Astro` and `Solidjs`
+# Mitchell Parker — Portfolio
 
-you can view a demo [here](https://astro-main-portfolio-ambience.netlify.app)
+Personal portfolio for Mitchell Parker, Technology Executive (AI & Data Architecture).
+Built with [Astro](https://astro.build) and [SolidJS](https://www.solidjs.com), styled with Tailwind CSS,
+with an animated gradient background.
 
-<img src="https://" width="80%" />
+## Pages
 
-## Features 🔥
+- `/` — name, title and focus areas
+- `/work` — work and leadership experience timeline
+- `/projects` — platforms designed, built and operated end-to-end
+- `/about` — profile, leadership scope, education and certifications
+- `/now` — what I'm working on at the moment
+- `/contact` — email and socials
 
-- [x] SSG
-- [x] Responsive
-- [x] Sitemap
-- [x] Good lighthouse Score
-- [x] Blog RSS feed
-- [x] Work projects page
-- [x] Smooth page transition (this might not work since it use browser API)
+## Content
 
-In order to disable a pages you need to prefix the file name with an `_` (e.g.: `about.astro` -> `_about.astro`)
+All content lives in `src/config.tsx` — work history, projects, socials, email,
+site URL, nav routes and the about-me copy. Editing that one file updates every page.
 
 ## Structure
 
@@ -22,20 +24,19 @@ In order to disable a pages you need to prefix the file name with an `_` (e.g.: 
 /
 ├── public/
 │   ├── fonts/
+│   ├── images/
 │   ├── favicon.ico
+│   ├── gradient.css
+│   ├── gradient.js
 │   ├── logo.svg
 │   └── robots.txt
 ├── src/
 │   ├── components/
-│   ├── content/
-│   │   |  blog/
-│   │   |    └── some-blog-posts.md
-│   │   └── config.ts
 │   ├── layouts/
-│   └── pages/
-│   └── utils/
-│   └── config.ts
-└── config.ts // you can set all social links, email and other info here
+│   ├── pages/
+│   ├── utils/
+│   └── config.tsx
+├── astro.config.mjs
 └── package.json
 ```
 
@@ -43,11 +44,13 @@ In order to disable a pages you need to prefix the file name with an `_` (e.g.: 
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+| Command           | Action                                       |
+| :---------------- | :------------------------------------------- |
+| `pnpm install`    | Install dependencies                          |
+| `pnpm dev`        | Start the local dev server at `localhost:3000`|
+| `pnpm build`      | Build the production site to `./dist/`        |
+| `pnpm preview`    | Preview the build locally before deploying    |
+
+## Deployment
+
+Deployed on Vercel as a static Astro build (`dist/`).
